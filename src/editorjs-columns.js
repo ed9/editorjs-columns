@@ -77,18 +77,18 @@ class EditorJsColumns {
 
 	renderSettings() {
 		const buttonTwoCols = {
-			name: "Two Cols",
-			icon: `<div>2</div>`,
+			name: "Divas kolonnas",
+			icon: `<div title="Divas kolonnas">2</div>`,
 		};
 
 		const buttonThreeCols = {
-			name: "Three Cols",
-			icon: `<div>3</div>`,
+			name: "Trīs kolonnas",
+			icon: `<div title="Trīs kolonnas">3</div>`,
 		};
 
 		const buttonRollCols = {
-			name: "Roll Cols",
-			icon: `<div>R</div>`,
+			name: "Virzīt kolonnas pa labi",
+			icon: `<div title="Virzīt kolonnas pa labi">V</div>`,
 		};
 
 		const wrapper = document.createElement("div");
@@ -136,13 +136,13 @@ class EditorJsColumns {
 		if (num == 2) {
 			if (this.editors.numberOfColumns == 3) {
 				let resp = await Swal.fire({
-					title: "Are you sure?",
-					text: "This will delete Column 3!",
+					title: "Uzmanību!",
+					text: "Šī darbība neatgriezeniski dzēsīs trešo kolonnu.",
 					icon: "warning",
 					showCancelButton: true,
 					confirmButtonColor: "#3085d6",
 					cancelButtonColor: "#d33",
-					confirmButtonText: "Yes, delete it!",
+					confirmButtonText: "Jā, dzēst!",
 				});
 
 				if (resp.isConfirmed) {
@@ -189,6 +189,7 @@ class EditorJsColumns {
 				defaultBlock: "paragraph",
 				holder: editor_col_id,
 				tools: this.config.tools,
+				i18n: this.config.i18n,
 				data: this.data.cols[index],
 				readOnly: this.readOnly,
 				minHeight: 50,
@@ -229,11 +230,6 @@ class EditorJsColumns {
 			}
 		}, true);
 
-
-
-
-
-
 		// console.log("Generating Wrapper");
 
 		// console.log(this.api.blocks.getCurrentBlockIndex());
@@ -267,6 +263,7 @@ class EditorJsColumns {
 				defaultBlock: "paragraph",
 				holder: editor_col_id,
 				tools: this.config.tools,
+				i18n: this.config.i18n,
 				data: this.data.cols[index],
 				readOnly: this.readOnly,
 				minHeight: 50,
@@ -292,7 +289,7 @@ class EditorJsColumns {
 	static get toolbox() {
 		return {
 			icon: icon,
-			title: "Columns",
+			title: "Kolonnas",
 		};
 	}
 }
