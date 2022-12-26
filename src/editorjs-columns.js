@@ -78,17 +78,17 @@ class EditorJsColumns {
 	renderSettings() {
 		const buttonTwoCols = {
 			name: "Divas kolonnas",
-			icon: `<div title="Divas kolonnas">2</div>`,
+			icon: `<div>2</div>`,
 		};
 
 		const buttonThreeCols = {
 			name: "Trīs kolonnas",
-			icon: `<div title="Trīs kolonnas">3</div>`,
+			icon: `<div>3</div>`,
 		};
 
 		const buttonRollCols = {
 			name: "Virzīt kolonnas pa labi",
-			icon: `<div title="Virzīt kolonnas pa labi">V</div>`,
+			icon: `<div>V</div>`,
 		};
 
 		const wrapper = document.createElement("div");
@@ -140,6 +140,7 @@ class EditorJsColumns {
 					text: "Šī darbība neatgriezeniski dzēsīs trešo kolonnu.",
 					icon: "warning",
 					showCancelButton: true,
+					cancelButtonText: "Atcelt",
 					confirmButtonColor: "#3085d6",
 					cancelButtonColor: "#d33",
 					confirmButtonText: "Jā, dzēst!",
